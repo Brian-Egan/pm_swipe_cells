@@ -2,6 +2,7 @@
 
 This gem provides an easy way to utilize the swipeable content view and buttons of SWTableViewCell within the ProMotion framework for RubyMotion.
 
+<p align="center"><img src="http://i.imgur.com/njKCjK8.gif"/></p>
 
 ## Installation
 
