@@ -19,7 +19,7 @@ $ rake pod:install
 ```
 
 # Functionality and Features
-*Fucntionality and Features write-up is taken directly from the [SWTableViewCell] repo. All credit to [CEWendel](https://github.com/CEWendel)*
+*Fucntionality and Features write-up (and the accompanying GIFs) is taken directly from the [SWTableViewCell] repo. All credit to [CEWendel](https://github.com/CEWendel)*
 
 ##Functionality
 ###Right Utility Buttons
@@ -47,12 +47,12 @@ PMSwipeCells works by adding a custom cell class to your project and hooking int
 
 To use, just add a few extra lines to the `table_data` hash in a PM:TableScreen. In each cell you'd like to be swipeable, specify the `cell_class:` as `SwipeableCell` and add a `properties:` hash which includes a `right_buttons` and/or `left_buttons` array.
 
-Each array takes up to 5 parameters, one of which is required:
+Each array takes up to 4 parameters, one of which is required:
    
 - **Required**
     + *action*: The action you want that button to perform, passed as a Symbol.
         
-        * **You must also remember to implement each action in your PM::TableScreen controller!**
+        * **Remember to also implement each action in your PM::TableScreen controller!**
 
 - **Recommended**
     
@@ -62,7 +62,7 @@ Each array takes up to 5 parameters, one of which is required:
 
 - **Optional**
     
-    + *Arguments*: Arguments to be passed to the action. Use a hash if multiple.
+    + *arguments*: Arguments to be passed to the action. Use a hash if multiple.
         
         * **If no argument is set, but your cell action takes a single parameter, the cell will be passed to your action (see `remove` example)
 
@@ -144,13 +144,7 @@ PMSwipeCell pre-configures your PM::TableScreen to act as the cell's delegate, h
 
 You can add as many buttons to each side as you'd like, however after 3 buttons you're in danger of your cell sliding off the page. Keep to 2 or 3 buttons to be safe!
 
-###Gotchas
-
-#### Seperator Insets
-* If you have left utility button on iOS 7, I recommend changing your Table View's seperatorInset so the seperator stretches the length of the screen
-<pre> tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0); </pre>
-
-# Cell Delegate Actions
+### Cell Delegate Actions
 
 If you decide to use your own delegate controller, there are two delegate actions which need to be implemented depending on which side(s) you placed buttons on.
 
@@ -167,3 +161,9 @@ If you decide to use your own delegate controller, there are two delegate action
         NSLog "The accompanying arguments are #{cell.right_buttons[index][:arguments]}" unless cell.right_buttons[index][:arguments].nil?
     end
 ```
+
+###Gotchas
+
+#### Seperator Insets
+* If you have left utility button on iOS 7, I recommend changing your Table View's seperatorInset so the seperator stretches the length of the screen
+<pre> tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0); </pre>
