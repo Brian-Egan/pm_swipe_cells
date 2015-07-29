@@ -49,24 +49,26 @@ To use, just add a few extra lines to the `table_data` hash in a PM:TableScreen.
 
 Each array takes up to 5 parameters, one of which is required:
    
-    - **Required**
-        + *action*: The action you want that button to perform, passed as a Symbol.
-            
-            * **You must also remember to implement each action in your PM::TableScreen controller!**
-    
-    - **Recommended**
+- **Required**
+    + *action*: The action you want that button to perform, passed as a Symbol.
         
-        + *color*: A UIColor for the button's background (defaults to UIColor.blueColor).
-        
-        + *title*: The text displayed on the button (defaults to the action name).
-    
-    - **Optional**
-        
-        + *Arguments*: Arguments to be passed to the action. Use a hash if multiple.
-            
-            * **If no argument is set, but your cell action takes a single parameter, the cell will be passed to your action (see `remove` example)
+        * **You must also remember to implement each action in your PM::TableScreen controller!**
 
-You can use just right buttons, just left_buttons or place buttons on both sides of a cell.
+- **Recommended**
+    
+    + *color*: A UIColor for the button's background (defaults to UIColor.blueColor).
+    
+    + *title*: The text displayed on the button (defaults to the action name).
+
+- **Optional**
+    
+    + *Arguments*: Arguments to be passed to the action. Use a hash if multiple.
+        
+        * **If no argument is set, but your cell action takes a single parameter, the cell will be passed to your action (see `remove` example)
+
+You can add only right buttons, only left_buttons or place buttons on both sides of a cell.
+
+# Example Code
 
 Here's an example of it in use:
 
@@ -137,7 +139,8 @@ Calling `show_buttons`, which takes either `:left` or `:right` as an argument wi
 # Additional Notes
 
 PMSwipeCell pre-configures your PM::TableScreen to act as the cell's delegate, however if you need to change this you can manually specific a delegate controller by passing the `delegate` arguments into the cell's `properties` hash. 
-    - **Note that changing this requires that you then implement the delegate actions and the cell actions in your delegate controller**
+    
+- **Note that changing this requires that you then implement the delegate actions and the cell actions in your delegate controller**
 
 You can add as many buttons to each side as you'd like, however after 3 buttons you're in danger of your cell sliding off the page. Keep to 2 or 3 buttons to be safe!
 
