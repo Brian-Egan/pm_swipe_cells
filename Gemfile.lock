@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pm_swipe_cells (0.0.1)
+    pm_swipe_cells (0.0.2)
       ProMotion (~> 2.0)
       motion-cocoapods (~> 1.4)
 
@@ -54,7 +54,7 @@ GEM
       bundler
     minitest (5.7.0)
     molinillo (0.3.1)
-    motion-cocoapods (1.7.2)
+    motion-cocoapods (1.7.3)
       cocoapods (>= 0.34)
     motion-redgreen (0.1.0)
     motion-stump (0.3.2)

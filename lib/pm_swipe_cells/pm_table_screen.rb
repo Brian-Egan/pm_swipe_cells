@@ -13,7 +13,7 @@ module ProMotion
 
     def tableView(tableView, cellForRowAtIndexPath: indexPath)
       cell = super
-      cell.index_path = indexPath
+      cell.index_path = indexPath if cell.respond_to?(:index_path)
       cell
     end
 

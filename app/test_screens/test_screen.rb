@@ -9,7 +9,7 @@ class TestScreen < PM::TableScreen
   end
 
   def will_appear
-    self.tableView.visibleCells[2].show_buttons(:left)
+    self.tableView.visibleCells[2].show_buttons(:left) if self.tableView.visibleCells[2].respond_to?(:show_buttons)
   end
 
   def table_data
