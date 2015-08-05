@@ -5,8 +5,10 @@ module ProMotion
     def on_cell_created(cell, data)
       super
 
-      cell.setDelegate((data[:delegate].nil? ? self : data[:delegate]))
-      cell.config(right_buttons: data[:properties][:right_buttons], left_buttons: data[:properties][:left_buttons]) if cell.respond_to?(:config)
+      cell.setDelegate((data[:delegate].nil? ? self : data[:delegate])) if cell.respond_to?(:"setDelegate:")
+      if data[:properties]
+        cell.config(right_buttons: data[:properties][:right_buttons], left_buttons: data[:properties][:left_buttons]) if cell.respond_to?(:config)
+      end
     end
 
     def tableView(tableView, cellForRowAtIndexPath: indexPath)
