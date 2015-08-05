@@ -7,6 +7,7 @@ module ProMotion
 
       cell.setDelegate((data[:delegate].nil? ? self : data[:delegate])) if cell.respond_to?(:"setDelegate:")
       if data[:properties]
+        data[:properties].reject{|k,v| [:right_buttons, :left_buttons].include?(k)}.each {|k,v| cell.send("#{k}=", v) if cell.respond_to?("#{k}=")}
         cell.config(right_buttons: data[:properties][:right_buttons], left_buttons: data[:properties][:left_buttons]) if cell.respond_to?(:config)
       end
     end
